@@ -2,8 +2,7 @@
 ' Programmer:   Gregory Mathews
 ' Date:         08/28/2014
 ' Description:  This project will display a "Hello World"
-'               message in two different languages
-'               and print the form.
+'               message in four different languages.
 
 Public Class HelloForm
 
@@ -31,12 +30,19 @@ Public Class HelloForm
 
     End Sub
 
-    Private Sub Print_Click(sender As Object, e As EventArgs) Handles PrintButton.Click
+    Private Sub FrenchButton_Click(sender As Object, e As EventArgs) Handles FrenchButton.Click
 
-        ' Print the form on the printer.
+        ' Display the Hello World message in French.
 
-        PrintForm1.PrintAction = Printing.PrintAction.PrintToPreview
-        PrintForm1.Print()
+        MessageLabel.Text = "Bonjour tout le monde"
+
+    End Sub
+
+    Private Sub ItalianButton_Click(sender As Object, e As EventArgs) Handles ItalianButton.Click
+
+        ' Display the Hello World message in Italian.
+
+        MessageLabel.Text = "Ciao Mondo"
 
     End Sub
 End Class
