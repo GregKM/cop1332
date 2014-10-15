@@ -89,22 +89,25 @@ Public Class MainForm
     Private Sub ClearAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearAllToolStripMenuItem.Click
 
         ' Show message box confirming that user wishes to clear all summary totals
-        MessageBox.Show("Clear all summary data?", "Confirm Clear", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        Dim result As DialogResult = MessageBox.Show("Clear all summary data?", "Confirm Clear", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
 
-        ' Reset all variable totals to 0
-        TotalComplete = 0
-        TotalPay = 0
+        If result = DialogResult.Cancel Then
+            MessageBox.Show("Clear action aborted!")
+        Else
+            ' Reset all variable totals to 0
+            TotalComplete = 0
+            TotalPay = 0
 
-        ' Clear all summary total text boxes and return focus to Name text box
-        TotalPiecesTextBox.Clear()
-        TotalPayTextBox.Clear()
-        AvgPayTextBox.Clear()
-        TotalWorkersTextBox.Clear()
-        NameTextBox.Focus()
+            ' Clear all summary total text boxes and return focus to Name text box
+            TotalPiecesTextBox.Clear()
+            TotalPayTextBox.Clear()
+            AvgPayTextBox.Clear()
+            TotalWorkersTextBox.Clear()
+            NameTextBox.Focus()
 
-        ' Disable Summary Button as we reset total variables to 0 and do not want to divide by 0
-        SummaryToolStripMenuItem.Enabled = False
-
+            ' Disable Summary Button as we reset total variables to 0 and do not want to divide by 0
+            SummaryToolStripMenuItem.Enabled = False
+        End If
     End Sub
 
     Private Sub ColorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ColorToolStripMenuItem.Click

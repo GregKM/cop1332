@@ -39,6 +39,7 @@ Partial Class MainForm
         Me.NumCompleteLabel = New System.Windows.Forms.Label()
         Me.EmpPayLabel = New System.Windows.Forms.Label()
         Me.PayTextBox = New System.Windows.Forms.TextBox()
+        Me.ExitButton = New System.Windows.Forms.Button()
         Me.SummaryGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -194,11 +195,21 @@ Partial Class MainForm
         Me.PayTextBox.Size = New System.Drawing.Size(133, 20)
         Me.PayTextBox.TabIndex = 6
         '
+        'ExitButton
+        '
+        Me.ExitButton.Location = New System.Drawing.Point(354, 170)
+        Me.ExitButton.Name = "ExitButton"
+        Me.ExitButton.Size = New System.Drawing.Size(75, 23)
+        Me.ExitButton.TabIndex = 11
+        Me.ExitButton.Text = "Exit"
+        Me.ExitButton.UseVisualStyleBackColor = True
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(534, 402)
+        Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.PayTextBox)
         Me.Controls.Add(Me.EmpPayLabel)
         Me.Controls.Add(Me.NumCompleteLabel)
@@ -235,5 +246,6 @@ Partial Class MainForm
     Friend WithEvents NumCompleteLabel As System.Windows.Forms.Label
     Friend WithEvents EmpPayLabel As System.Windows.Forms.Label
     Friend WithEvents PayTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ExitButton As System.Windows.Forms.Button
 
 End Class

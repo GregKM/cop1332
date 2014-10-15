@@ -13,6 +13,7 @@ Public Class MainForm
     Dim TotalComplete As Integer
     Dim TotalPay As Decimal
     Dim AvgPay As Decimal
+    Dim TotalWorkers As Integer
 
     ' Define variables for message box strings
     Dim NoData As String = "Data entry error. No data entered."
@@ -57,6 +58,7 @@ Public Class MainForm
             ' Increment totals for both total pay and total completed units
             TotalPay += EmpPay
             TotalComplete += NumCompleted
+            TotalWorkers += 1
 
             ' Use ToString method to display employee pay in the pay text box as currency
             PayTextBox.Text = EmpPay.ToString("C")
@@ -68,7 +70,7 @@ Public Class MainForm
     Private Sub SumButton_Click(sender As Object, e As EventArgs) Handles SumButton.Click
 
         ' Calculate and store total average pay for all employees
-        AvgPay = TotalPay / TotalComplete
+        AvgPay = TotalPay / TotalWorkers
 
         ' Use ToString method to display totals in all summary text boxes
         TotalPiecesTextBox.Text = TotalComplete.ToString
@@ -90,21 +92,29 @@ Public Class MainForm
     Private Sub ClearAllButton_Click(sender As Object, e As EventArgs) Handles ClearAllButton.Click
 
         ' Show message box confirming that user wishes to clear all summary totals
-        MessageBox.Show("Clear all summary data?", "Confirm Clear", MessageBoxButtons.OKCancel)
+        Dim result As DialogResult = MessageBox.Show("Clear all summary data?", "Confirm Clear", MessageBoxButtons.OKCancel)
 
-        ' Reset all variable totals to 0
-        TotalComplete = 0
-        TotalPay = 0
-        AvgPay = 0
+        If result = DialogResult.Cancel Then
+            MessageBox.Show("Clear action aborted")
+        Else
+            ' Reset all variable totals to 0
+            TotalComplete = 0
+            TotalPay = 0
+            AvgPay = 0
 
-        ' Clear all summary total text boxes and return focus to Name text box
-        TotalPiecesTextBox.Clear()
-        TotalPayTextBox.Clear()
-        AvgPayTextBox.Clear()
-        NameTextBox.Focus()
+            ' Clear all summary total text boxes and return focus to Name text box
+            TotalPiecesTextBox.Clear()
+            TotalPayTextBox.Clear()
+            AvgPayTextBox.Clear()
+            NameTextBox.Focus()
 
-        ' Disable Summary Button as we reset total variables to 0 and do not want to divide by 0
-        SumButton.Enabled = False
+            ' Disable Summary Button as we reset total variables to 0 and do not want to divide by 0
+            SumButton.Enabled = False
+        End If
 
+    End Sub
+
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        Me.Close()
     End Sub
 End Class
