@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{AD8AFC32-278B-477D-A693-60DEE9230658}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Project_4._6.My.MyApplication</StartupObject>
-    <RootNamespace>Project_4._6</RootNamespace>
-    <AssemblyName>Project-4.6</AssemblyName>
+    <StartupObject>Project_5._1.My.MyApplication</StartupObject>
+    <RootNamespace>Project_5._1</RootNamespace>
+    <AssemblyName>Project-5.1</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -20,7 +20,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Project-4.6.xml</DocumentationFile>
+    <DocumentationFile>Project-5.1.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -30,7 +30,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Project-4.6.xml</DocumentationFile>
+    <DocumentationFile>Project-5.1.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>

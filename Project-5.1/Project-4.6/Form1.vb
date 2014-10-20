@@ -28,6 +28,9 @@ Public Class MainForm
             ' Enable Summary Menu Item now that we are calculating our first total
             SummaryToolStripMenuItem.Enabled = True
 
+            ' Increment total workers
+            TotalWorkers = TotalWorkers + 1
+
             ' Use Try/Catch to catch invalid data format exception
             Try
                 NumCompleted = Integer.Parse(PiecesTextBox.Text)
@@ -54,10 +57,9 @@ Public Class MainForm
             ' Calculate current and store current employee payout
             EmpPay = NumCompleted * PricePaid
 
-            ' Increment totals for total pay, total completed units, and total workers
+            ' Increment totals for total pay and total completed units
             TotalPay += EmpPay
             TotalComplete += NumCompleted
-            TotalWorkers = TotalWorkers + 1
 
             ' Use ToString method to display employee pay in the pay text box as currency
             PayTextBox.Text = EmpPay.ToString("C")
@@ -98,6 +100,11 @@ Public Class MainForm
             TotalComplete = 0
             TotalPay = 0
 
+            ' Clear all employee text boxes
+            NameTextBox.Clear()
+            PiecesTextBox.Clear()
+            PayTextBox.Clear()
+
             ' Clear all summary total text boxes and return focus to Name text box
             TotalPiecesTextBox.Clear()
             TotalPayTextBox.Clear()
@@ -122,7 +129,7 @@ Public Class MainForm
             TotalPiecesTextBox.ForeColor = .Color
             TotalPayTextBox.ForeColor = .Color
             AvgPayTextBox.ForeColor = .Color
-            TotalWorkersLabel.ForeColor = .Color
+            TotalWorkersTextBox.ForeColor = .Color
         End With
 
     End Sub
