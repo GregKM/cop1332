@@ -1,7 +1,7 @@
 ﻿' Programmer: Gregory Mathews
 ' Subject: COP-1332
 ' Project: Chapter 7, Exercise 3
-' Description: This program will calculates yacht charter prices using data input by the user and predefined entries in combo boxes
+' Description: This program will calculate yacht charter prices using data input by the user and predefined entries in combo boxes
 
 Public Class MainForm
 
@@ -305,6 +305,12 @@ Public Class MainForm
             e.Graphics.DrawString(PrintLineString, PrintFont, _
             Brushes.Black, HorizontalPrintLocationSingle, VerticalPrintLocationSingle)
         Next ListIndexInteger
+
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+
+        Me.Close()
 
     End Sub
 
